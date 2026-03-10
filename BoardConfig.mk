@@ -10,16 +10,16 @@ BOARD_DTBOIMG_PARTITION_SIZE := 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 86888448
 BOARD_SUPER_PARTITION_SIZE := 10171187200
 
-# Inherit from sm8250-commmon
-include device/samsung/sm8250-common/BoardConfigCommon.mk
+# Inherit from sm7225-commmon
+include device/samsung/sm7225-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/samsung/gts7xlwifi
+DEVICE_PATH := device/samsung/gts7xllite
 
 # Display
-TARGET_SCREEN_DENSITY := 320
+TARGET_SCREEN_DENSITY := 320 # This density is wrong
 
 # Kernel
-TARGET_KERNEL_CONFIG += vendor/samsung/gts7xlwifi.config
+TARGET_KERNEL_CONFIG += vendor/samsung/gts7xllite_defconfig
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
@@ -29,10 +29,6 @@ TARGET_RECOVERY_DEFAULT_TOUCH_ROTATION := ROTATION_RIGHT
 
 # SELinux
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
-
-# UDFPS
-TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x400000000LL
-TARGET_USES_FOD_ZPOS := true
 
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/manifest.xml

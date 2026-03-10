@@ -1,4 +1,6 @@
-# Device-specific proprietary files - from Samsung package version T970XXS7DXH1 (T)
+# Device-specific proprietary files - from Samsung package version 
+
+# TODO: Rework this for gts7xllite | Taken from S7 wifi (SM-T730)
 
 # ACDB data
 vendor/etc/acdbdata/adsp_avs_config.acdb

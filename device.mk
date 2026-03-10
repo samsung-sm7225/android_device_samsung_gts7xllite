@@ -4,10 +4,9 @@
 #
 
 TARGET_IS_TABLET := true
-TARGET_IS_WIFI-ONLY := true
 
-# Inherit from sm8250-common
-$(call inherit-product, device/samsung/sm8250-common/common.mk)
+# Inherit from sm7225-common
+$(call inherit-product, device/samsung/sm7225-common/common.mk)
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -19,22 +18,24 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1752
-TARGET_SCREEN_WIDTH := 2800
+TARGET_SCREEN_HEIGHT := 1600
+TARGET_SCREEN_WIDTH := 2560
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.bootanim.set_orientation_4630947232161729153=ORIENTATION_90
+# TODO: Check if we actually need this
+# PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+#     ro.bootanim.set_orientation_4630947232161729153=ORIENTATION_90
 
 # GMS
 WITH_GMS_COMMS_SUITE := false
 
+# TODO: Check if we actually need this
 # Display
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.primary_display_orientation=ORIENTATION_270
+# PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+#    ro.surface_flinger.primary_display_orientation=ORIENTATION_270
 
 # Init files
 PRODUCT_PACKAGES += \
-    init.gts7xlwifi.rc
+    init.gts7xllite.rc
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -53,4 +54,4 @@ $(call soong_config_set,samsungUdfpsVars,udfps_zorder,0x20000000u)
 $(call soong_config_set,surfaceflinger,udfps_lib,//hardware/samsung/fingerprint:libudfps_extension.samsung)
 
 # Inherit from vendor blobs
-$(call inherit-product-if-exists, vendor/samsung/gts7xlwifi/gts7xlwifi-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/gts7xllite/gts7xllite-vendor.mk)

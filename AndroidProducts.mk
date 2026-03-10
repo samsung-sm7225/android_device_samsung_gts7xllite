@@ -4,4 +4,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_gts7xlwifi.mk
+    $(LOCAL_DIR)/lineage_gts7xllite.mk

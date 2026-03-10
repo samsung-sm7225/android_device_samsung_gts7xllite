@@ -4,8 +4,8 @@
 //
 
 prebuilt_etc {
-    name: "init.gts7xlwifi.rc",
-    src: "init.gts7xlwifi.rc",
+    name: "init.gts7xllite.rc",
+    src: "init.gts7xllite.rc",
     sub_dir: "init/hw",
     soc_specific: true,
 }
