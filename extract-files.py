@@ -13,7 +13,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'vendor/samsung/sm7225-common',
+    'vendor/samsung/gts7xllite',
     'vendor/qcom/opensource/display',
 ]
 
@@ -26,6 +26,6 @@ module = ExtractUtilsModule(
 
 if __name__ == '__main__':
     utils = ExtractUtils.device_with_common(
-        module, 'sm7225-common', module.vendor
+        module, 'gts7xllite', module.vendor
     )
     utils.run()
