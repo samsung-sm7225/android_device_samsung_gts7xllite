@@ -13,7 +13,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'vendor/samsung/gts7xllite',
+    'vendor/samsung/sm7225-common',
     'vendor/qcom/opensource/display',
 ]
 
