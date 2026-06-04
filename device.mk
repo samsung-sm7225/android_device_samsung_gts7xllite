@@ -39,7 +39,8 @@ PRODUCT_PACKAGES += \
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay \
+    WifiResDevice
 
 # Sensors
 PRODUCT_COPY_FILES += \
